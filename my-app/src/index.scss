@@ -1,0 +1,395 @@
+@import './styles/fonts';
+@import './styles/normalize';
+@import './styles/variables';
+@import './styles/mixins';
+
+* {
+  box-sizing: border-box;
+  font-family: var(--main-font);
+  font-size: 1.6rem;
+  font-weight: 400;
+  line-height: 1.25;
+  font-style: normal;
+  color: var(--dark-grey-color);
+}
+*:disabled {
+  cursor: not-allowed;
+}
+html {
+  font-size: 62.5%;
+}
+body {
+  @include flex-column();
+  min-width: 320px;
+  min-height: 100vh;
+  background-color: var(--sand-color);
+}
+button {
+  padding: 0;
+  cursor: pointer;
+}
+ul, ol {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+}
+a {
+  text-decoration: none;
+}
+p {
+  margin: 0;
+}
+h1, h2, h3 {
+  margin: 0;
+}
+fieldset {
+  border: none;
+  padding: 0;
+}
+form {
+  margin-bottom: 0;
+}
+.container {
+  padding: 0 15px;
+  margin: 0 auto;
+  max-width: 1140px;
+  width: 100%;
+}
+.btn {
+  @include flex-center ();
+  border: 1px solid transparent;
+  border-radius: 5px;
+  font-weight: 600;
+  padding: 13px 0;
+  color: var(--white);
+  transition: .3s ease-in-out color, .3s ease-in-out background-color, .3s ease-in-out border-color;
+  &.type-1 {
+      background-color: var(--blue-color);
+      &:hover {
+          border-color: var(--blue-color-hover);
+          background-color: var(--blue-color-hover);
+      }
+      &:active {
+          border-color: var(--blue-color-active);
+          background-color: var(--blue-color-active);
+      }
+      &:disabled {
+          border-color: var(--light-blue-color);
+          background-color: var(--light-blue-color);
+      }
+  }
+  &.type-2 {
+      background-color: var(--dark-blue-color);
+      &:hover {
+          border-color: var(--dark-blue-color-hover);
+          background-color: var(--dark-blue-color-hover);
+      }
+      &:active {
+          border-color: var(--dark-blue-color-active);
+          background-color: var(--dark-blue-color-active);
+      }
+      &:disabled {
+          border-color: var(--disabled-grey-color);
+          background-color: var(--disabled-grey-color);
+      }
+  }
+  &.type-3 {
+      border-color: var(--dark-blue-color);
+      color: var(--dark-blue-color);
+      background-color: var(--white);
+      &:hover {
+          border-color: var(--dark-blue-color-hover);
+          color: var(--dark-blue-color-hover);
+      }
+      &:active {
+          border-color: var(--dark-blue-color-active);
+          color: var(--dark-blue-color-active);
+      }
+      &:disabled {
+          border-color: var(--disabled-grey-color);
+          color: var(--disabled-grey-color);
+      }
+  }
+}
+.link {
+  color: var(--blue-color);
+  transition: .3s ease-in-out color;
+  &:hover {
+      color: var(--dark-blue-color-hover);
+  }
+  &:active {
+      color: var(--dark-blue-color-hover);
+  }
+  &:disabled {
+      color: var(--light-blue-color);
+  }
+  &_dark {
+      color: var(--dark-blue-color);
+      transition: .3s ease-in-out color;
+      &:hover {
+          color: var(--blue-color);
+      }
+  }
+}
+.card {
+  border-radius: 5px;
+  background: var(--white);
+  box-shadow: 0px 0px 6px rgba(6, 71, 120, 0.15);
+  &__intro {
+      border-bottom: 1px solid var(--dark-sand-color);
+      padding: 19px 30px 17px 30px;
+      &-title {
+          margin-right: 30px;
+          font-size: 1.8rem;
+      }
+  }
+  &__title {
+      font-size: 1.8rem;
+  }
+  &__list {
+      padding: 44px 30px 46px 30px;
+  }
+  &__item {
+      display: flex;
+      &:not(:last-child) {
+          margin-bottom: 19px;
+      }
+  }
+  &__description {
+      margin-right: 30px;
+      max-width: 225px;
+      width: 100%;
+      font-weight: 600;
+  }
+  &__form {
+      padding: 0 30px 50px 30px;
+      &-input {
+          width: 310px;
+          letter-spacing: 0.15em;
+      }
+      &-checkbox {
+          position: relative;
+          @include flex ();
+          padding-left: 38px;
+          margin-left: 255px;
+          margin-bottom: 20px;
+          user-select: none;
+          cursor: pointer;
+          & input:checked ~ .card__form-checkmark::before {
+              border-color: var(--blue-color);
+          }
+          & input:checked ~ .card__form-checkmark::after {
+              display: block;
+          }
+      }
+      &-checkmark {
+          display: block;
+          width: 100%;
+          font-size: 1.6rem;
+          color: rgba(8, 47, 56, .86);
+          &::before, &::after {
+              content: '';
+              position: absolute;
+              top: 50%;
+              border-radius: 5px;
+              transform: translateY(-50%);
+          }
+          &::before {
+              left: 0;
+              border: 1px solid var(--dark-sand-color);
+              width: 25px;
+              height: 25px; 
+          }
+          &::after {
+              left: 5px;
+              display: none;
+              width: 17px;
+              height: 17px;
+              background-color: var(--blue-color);
+          }
+      }
+      &-btn {
+          margin-left: 255px;
+          min-width: 310px;
+      }
+  }
+}
+.input {
+  border: 1px solid var(--dark-sand-color);
+  border-radius: 5px;
+  padding: 15px;
+  font-size: 1.6rem;
+  background-color: var(--white);
+  &:focus {
+      border-color: var(--grey-color);
+      outline: none;
+  }
+  &[type="password"] {
+      font-family: auto;
+  }
+}
+.input-wrap {
+  position: relative;
+  & .toggle-password__icon.close {
+      display: none;
+  }
+  &.open {
+      & .toggle-password__icon.open {
+          display: none;
+      } 
+      & .toggle-password__icon.close {
+          display: block;
+      }  
+      & input {
+          font-family: var(--main-font);
+      }
+  }
+  &.error .input {
+      border-color: var(--red);
+  }
+}
+.toggle-password {
+  position: absolute;
+  top: 11px;
+  right: 15px;
+  display: block;
+  border: none;
+  width: 25px;
+  height: 25px;
+  background-color: transparent;
+  &__icon {
+      width: 100%;
+      height: 100%;
+  }
+}
+.receipt {
+  @include flex ();
+  color: var(--blue-color);
+  &__icon {
+      margin-right: 8px;
+      width: 24px;
+      height: 24px;
+      fill: none;
+      stroke: var(--blue-color);
+      transition: .3s ease-in-out stroke;
+  }
+  &:hover .receipt__icon {
+      stroke: var(--dark-blue-color-hover);
+  }
+}
+.breadcrumbs {
+  display: flex;
+  padding: 36px 0 40px 0;
+  &__item {
+      position: relative;
+      &:not(:last-child) {
+          padding-right: 14px;
+      }
+      &:not(:first-child)::before {
+          content: '/';
+          position: absolute;
+          left: -9px;
+          top: 50%;
+          transform: translateY(-50%);
+      }
+      &:last-child {
+          pointer-events: none;
+          & .breadcrumbs__link {
+              color: var(--dark-grey-color);
+          }
+      }
+  }
+  &__link {
+      font-size: 1.4rem;
+      color: var(--grey-color);
+  }
+}
+.visually-hidden {
+  position: absolute;
+  border: 0;
+  margin: -1px;
+  padding: 0;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0)
+}
+.error-text {
+  position: absolute;
+  left: 0;
+  bottom: -15px;
+  font-size: 1.2rem;
+  line-height: 1.33;
+  color: var(--red);
+}
+@media screen and (max-width: 1024px) {
+  .container {
+      padding: 0 40px;
+  }
+  .card {
+      &__intro {
+          padding: 19px 20px 17px 20px;
+      }
+      &__list {
+          padding: 44px 20px 46px 20px;
+      }
+  }
+  .breadcrumbs {
+      padding: 24px 0 17px 0;
+  }
+}
+@media screen and (max-width: 767px) {
+  .container {
+      padding: 0 15px;
+  }
+  .input {
+      padding: 14px;
+  }
+  .card {
+      &__intro {
+          padding: 15px;
+          &-title {
+              font-size: 1.6rem;
+          }
+      }
+      &__list {
+          padding: 21px 15px 24px 15px;
+      }
+      &__item {
+          flex-direction: column;
+          &:not(:last-child) {
+              margin-bottom: 15px;
+          }
+      }
+      &__description {
+          margin-right: 0;
+          margin-bottom: 3px;
+          max-width: none;
+      }
+      &__value {
+          line-height: 1.5;
+      }
+      &__form {
+          padding: 0 15px 30px 15px;
+          &-checkbox {
+              margin-left: 0;
+          }
+          &-btn {
+              margin-left: 0;
+              min-width: auto;
+              width: 100%;
+          }
+          &-input {
+              width: 100%;
+          }
+          &-checkbox {
+              margin-bottom: 16px;
+          }
+      }
+  }
+  .breadcrumbs {
+      &__link {
+          font-size: 1.2rem;
+      }
+  }
+}

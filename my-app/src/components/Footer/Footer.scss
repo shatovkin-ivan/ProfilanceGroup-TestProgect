@@ -1,0 +1,28 @@
+@import '../../styles/mixins';
+
+.footer {
+    padding: 40px 0;
+    margin-top: auto;
+    border-top: 1px solid var(--dark-sand-color);
+    &__list {
+        @include flex-between ();
+    }
+    &__link, &__address {
+        display: block;
+        line-height: 1.25;
+        color: var(--grey-color);
+    }
+}
+@media screen and (max-width: 767px) {
+    .footer {
+        padding: 25px 0;
+        &__list {
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: flex-start;
+        }
+        &__item:not(:last-child) {
+            margin-bottom: 14px;
+        }
+    }
+}
