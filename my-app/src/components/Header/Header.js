@@ -2,8 +2,7 @@ import React from 'react';
 import './Header.scss';
 import logo from '../../images/logo.svg';
 
-
-export default function Header() {
+const Header = props => {
     return (
         <header className="header">
             <div className="container">
@@ -16,7 +15,9 @@ export default function Header() {
                             <a className="header__item" href="settings.html">
                                 <p className="header__item-description link_dark">Новости</p>
                             </a>
-                            <a href="/" className="header__item">
+                            <a href="/" className="header__item" onClick={() => setModal({
+                                ...modal, modalAuthorization: true
+                            })}>
                                 <p className="header__item-description link_dark">Вход</p>
                             </a>
                         </div>
@@ -26,3 +27,5 @@ export default function Header() {
         </header>
     )
 }
+
+export default Header
