@@ -15,9 +15,7 @@ const Header = props => {
                             <a className="header__item" href="settings.html">
                                 <p className="header__item-description link_dark">Новости</p>
                             </a>
-                            <a href="/" className="header__item" onClick={() => setModal({
-                                ...modal, modalAuthorization: true
-                            })}>
+                            <a href="/" className="header__item">
                                 <p className="header__item-description link_dark">Вход</p>
                             </a>
                         </div>
