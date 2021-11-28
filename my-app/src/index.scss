@@ -215,6 +215,14 @@ form {
       }
   }
 }
+.intro {
+    padding: 60px 0;
+    &__title {
+        font-size: 3.2rem;
+        font-weight: 600;
+        line-height: 1.25;
+    }
+}
 .input {
   border: 1px solid var(--dark-sand-color);
   border-radius: 5px;
@@ -263,48 +271,6 @@ form {
       height: 100%;
   }
 }
-.receipt {
-  @include flex ();
-  color: var(--blue-color);
-  &__icon {
-      margin-right: 8px;
-      width: 24px;
-      height: 24px;
-      fill: none;
-      stroke: var(--blue-color);
-      transition: .3s ease-in-out stroke;
-  }
-  &:hover .receipt__icon {
-      stroke: var(--dark-blue-color-hover);
-  }
-}
-.breadcrumbs {
-  display: flex;
-  padding: 36px 0 40px 0;
-  &__item {
-      position: relative;
-      &:not(:last-child) {
-          padding-right: 14px;
-      }
-      &:not(:first-child)::before {
-          content: '/';
-          position: absolute;
-          left: -9px;
-          top: 50%;
-          transform: translateY(-50%);
-      }
-      &:last-child {
-          pointer-events: none;
-          & .breadcrumbs__link {
-              color: var(--dark-grey-color);
-          }
-      }
-  }
-  &__link {
-      font-size: 1.4rem;
-      color: var(--grey-color);
-  }
-}
 .visually-hidden {
   position: absolute;
   border: 0;
@@ -335,8 +301,11 @@ form {
           padding: 44px 20px 46px 20px;
       }
   }
-  .breadcrumbs {
-      padding: 24px 0 17px 0;
+  .intro {
+    padding: 40px 0;
+    &__title {
+        font-size: 2.8rem;
+    }
   }
 }
 @media screen and (max-width: 767px) {
@@ -345,6 +314,12 @@ form {
   }
   .input {
       padding: 14px;
+  }
+  .intro {
+    padding: 30px 0;
+    &__title {
+        font-size: 2.4rem;
+    }
   }
   .card {
       &__intro {
@@ -386,11 +361,6 @@ form {
           &-checkbox {
               margin-bottom: 16px;
           }
-      }
-  }
-  .breadcrumbs {
-      &__link {
-          font-size: 1.2rem;
-      }
-  }
+        }
+    }
 }

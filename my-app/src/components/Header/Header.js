@@ -2,7 +2,7 @@ import React from 'react';
 import './Header.scss';
 import logo from '../../images/logo.svg';
 
-const Header = props => {
+const Header = ({active, setActive}) => {
     return (
         <header className="header">
             <div className="container">
@@ -15,7 +15,7 @@ const Header = props => {
                             <a className="header__item" href="settings.html">
                                 <p className="header__item-description link_dark">Новости</p>
                             </a>
-                            <a href="/" className="header__item">
+                            <a href="/" className="header__item" onClick={() => setActive(true)}>
                                 <p className="header__item-description link_dark">Вход</p>
                             </a>
                         </div>

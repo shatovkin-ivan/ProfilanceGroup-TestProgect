@@ -1,12 +1,13 @@
 function mapStateToProps(component) {
 	switch (component) {
-		case "Component_1": {
+		case "LoginPopup": {
 			return function (state) {
 				return {
 					value_1: state.value_1
 				};
 			}
 		}
+		default: return undefined;
 	}
 }
 

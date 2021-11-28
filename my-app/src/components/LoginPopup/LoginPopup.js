@@ -1,14 +1,14 @@
 import React from "react";
 import './LoginPopup.scss';
 
-const Modal = props => {
+const Modal = ({active, setActive}) => {
     return (
-        <div className={`overlay ${props.isOpened ? 'open' : 'close'}`}>
-            <div className="authorization card"> 
-                <button type="button" className="authorization__close"></button>
+        <div className={active ? "active overlay" : "overlay"} onClick={() => setActive(false)}>
+            <div className="authorization card" onClick={e => e.stopPropagation()}> 
+                <button type="button" className="authorization__close" onClick={() => setActive(false)}></button>
                 <form className="authorization__form" method="POST">
                     <fieldset className="authorization__form-wrap">
-                        <legend className="authorization__title">Вход</legend>
+                        <legend className="authorization__form-title">Вход</legend>
                         <ul className="authorization__form-list"> 
                             <li className="authorization__form-item"> 
                                 <label className="authorization__form-label">

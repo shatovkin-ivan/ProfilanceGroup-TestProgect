@@ -1,11 +1,11 @@
 import { bindActionCreators } from 'redux';
-import action_1 from './actionCreators/action_1';
+import AuthPopup from './actionCreators/AuthPopup';
 
 function mapDispatchToProps(component) {
 	switch (component) {
-		case "Component_1": return function (dispatch) {
+		case "LoginPopup": return function (dispatch) {
 			return {
-				change_value_1: bindActionCreators(action_1, dispatch)
+				change_value_1: bindActionCreators(AuthPopup, dispatch)
 			};
 		};
 		default: return undefined;
