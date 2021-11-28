@@ -1,5 +1,7 @@
 import React from 'react';
+import { Link } from "react-router-dom";
 import './Header.scss';
+import '../wrapComponents/LoginPopupWrap';
 import logo from '../../images/logo.svg';
 
 const Header = ({active, setActive}) => {
@@ -7,16 +9,14 @@ const Header = ({active, setActive}) => {
         <header className="header">
             <div className="container">
                 <div className="header__wrap">
-                    <a className="header__logo" href="/">
+                    <Link className="header__logo" to="/">
                         <img src={logo} alt=""/>
-                    </a>
+                    </Link>
                     <div className="header__content">
                         <div className="header__content-block">
-                            <a className="header__item" href="settings.html">
-                                <p className="header__item-description link_dark">Новости</p>
-                            </a>
-                            <a href="/" className="header__item" onClick={() => setActive(true)}>
-                                <p className="header__item-description link_dark">Вход</p>
+                            <Link className="header__item link_dark" to="/news">Новости</Link>
+                            <a href="void(0)" className="header__item link_dark" onClick={() => setActive(true)}>
+                                Вход
                             </a>
                         </div>
                     </div>

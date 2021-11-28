@@ -3,7 +3,7 @@ import './LoginPopup.scss';
 
 const Modal = ({active, setActive}) => {
     return (
-        <div className={active ? "active overlay" : "overlay"} onClick={() => setActive(false)}>
+        <div className={active ? "active overlay" : "overlay"} onClick={() => setActive(false)}> 
             <div className="authorization card" onClick={e => e.stopPropagation()}> 
                 <button type="button" className="authorization__close" onClick={() => setActive(false)}></button>
                 <form className="authorization__form" method="POST">
@@ -45,7 +45,6 @@ const Modal = ({active, setActive}) => {
                 </form>
             </div>
         </div>
-        
     )
 }
 

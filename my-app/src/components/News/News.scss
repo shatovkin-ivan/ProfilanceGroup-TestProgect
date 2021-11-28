@@ -15,6 +15,7 @@
         gap: 20px;
     }
     &__item {
+        border: 1px solid var(--light-grey-color);
         background-color: var(--white);
         &-img {
             width: 100%;
