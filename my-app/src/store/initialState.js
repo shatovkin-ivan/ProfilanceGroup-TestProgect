@@ -1,5 +1,5 @@
 const initialState = {
-	value_1: true,
+	value_1: false,
 	value_2: false
 };
 

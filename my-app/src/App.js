@@ -9,7 +9,7 @@ import NewsPage from './pages/news';
 
 function App() {
 
-  const [modalActive, setModalActive] = useState(true);
+  const [modalActive, setModalActive] = useState(false);
 
   return (
     <React.Fragment>

@@ -22,8 +22,10 @@
         }
     }
     &__item {
+        border: none;
         font-weight: 600;
         color: var(--dark-blue-color);
+        background-color: transparent;
         &:not(:last-child) {
             margin-right: 39px;
         }
